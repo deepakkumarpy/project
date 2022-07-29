@@ -1,0 +1,88 @@
+ <section id="artists" class="p-0">
+    <div class="container container-lg-3 container-md-4 container-sm-6 container-s-6 ">
+      <h1 class="title  text">Artists</h1>
+      <div class="row row-cols-1 row-cols-md-3 g-4 p-5 ">
+
+        <div class="col-lg-3 col-md-4 col-sm-6 ">
+          <div class="c">
+            <a href=""><img src="u1.png" class="rounded-circle" width="140" height="140" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em"></text></a>
+            <div class="card-body">
+              <h2>Yuvan Shankar Raja</h2>
+              <p>Music Director</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="c">
+            <a href=""><img src="gv.png" class="rounded-circle" width="140" height="140" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em"></text></a>
+            <div class="card-body">
+              <h2>GV prakash</h2>
+              <p >Music Director</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="c">
+            <a href=""><img src="ani.png" class="rounded-circle" width="140" height="140" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em"></text></a>
+            <div class="card-body">
+              <h2>Anirudh Ravichandar</h2>
+              <p>Music Director</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="c">
+            <a href=""><img src="haris.png" class="rounded-circle" width="140" height="140" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em"></text></a>
+            <div class="card-body">
+              <h2>Harish Jayaraj</h2>
+              <p>Music Director</p> 
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="c">
+            <a href=""><img src="ar.png" class="rounded-circle" width="140" height="140" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em"></text></a>
+            <div class="card-body">
+              <h2>AR Rahman</h2>
+              <p>Music Director</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="c">
+            <a href=""><img src="imman.png" class="rounded-circle" width="140" height="140" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em"></text></a>
+            <div class="card-body">
+              <h2>D Imman</h2>
+              <p>Music Director</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="c">
+            <a href=""><img src="illaiyaraja.png.jpg" class="rounded-circle" width="140" height="140" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em"></text></a>
+            <div class="card-body">
+              <h2>Illaiya Raja</h2>
+              <p>Music Director</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="c">
+            <a href=""><img src="sid.png" class="rounded-circle" width="140" height="140" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em"></text></a>
+            <div class="card-body">
+              <h2>Sid Sriram</h2>
+              <p>Singer</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>

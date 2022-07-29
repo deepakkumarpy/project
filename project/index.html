@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <title>Listen music</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;1,300&display=swap');
+
+      *
+      {
+          font-family: sans-serif;
+          
+      }
+      body
+      {
+          font-size: 15px;
+          line-height: 1.8;   
+      }
+      .navbar 
+      {
+          border-bottom:1px solid black ;
+          background-color:#ff3c78;
+      }
+      .nav-link
+      {
+          text-transform: uppercase;
+          letter-spacing: 1px; 
+          padding: 0 10px;
+
+      }
+      .nav-link:hover
+      {
+        color:black;
+      }
+      .nav-link::after
+      {
+        content: "";
+        display: block;
+        background:black;
+        height: 3px;
+        bottom: 0;
+        width: 0%;
+        transition: width 0.3s;
+      }
+      .nav-link:hover::after
+      {
+        width: 100%;
+        transition:width 0.3s;
+
+      }
+      
+      .carousel-item::before
+      {
+          content: "";
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          position: absolute;
+          display: block;
+          background: #000;
+          opacity: 0.7;
+      }
+      #artists
+      {
+        background-color:#000;
+      }
+      .title
+      {
+        text-align: center;
+      }
+      .pricing
+      {
+        background-color: black;
+      }
+      #home
+      {
+        position: relative;
+        background-image:url("back1.jpg");
+        width: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+        height: 500px;
+      }
+      #logo1
+      {
+        position:absolute;
+        top: 10%;
+        opacity: 0.7;
+        padding-inline-start: 50%;
+      }
+      .content
+      {
+        padding-top: 10%;
+      }
+      .content h1
+      {
+        text-transform:uppercase;
+         font-size:50px;
+         margin-top: 50px;
+         text-align: center;
+      }
+      .content p
+      {
+         font-weight: 100;
+         line-height: 20px;
+         text-align: center;
+      }
+      .btn1
+      {
+        border: none;
+        outline: none;
+        height: 50px;
+        font-weight: bold;
+        color: white;
+        border-radius: 50px;
+        width: 100px;
+        background-color: black;
+      }
+      .btn1:hover
+        {
+          background-color:#ff3c78;
+          color: black;
+          border: 1px solid;
+        }
+        .btn1 a
+        {
+          color: white;
+        }
+        .navbar-toggler
+        {
+          background-color:white;  
+        }
+        #why
+        {
+          background-color: black;
+        }
+        .footer
+        {
+          background-color: #ff3c78;
+          color: white;
+          padding: 70px 0;
+          font-family: 'Poppins', sans-serif;
+        }
+        .row
+        {
+          display: flex;
+          flex-wrap:wrap ;
+        }
+        .footer-col ul
+        {
+          list-style: none;
+        }
+
+        .footer-col
+        {
+          width: 25%;
+          padding: 0 15px;
+        }
+        .footer-col h4
+        {
+          font-size: 18px;
+          color:#ffffff ;
+          text-transform: uppercase;
+          margin-bottom: 20px;
+          font-weight: 500;
+          position: relative;
+        }
+        .footer-col h4::before
+        {
+          content: "";
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: -10px;
+          background-color: #000;
+          height: 3px;
+          box-sizing: border-box;
+          width: 120px;
+        }
+        .footer-col ul li:not(:last-child)
+        {
+          margin-bottom: 10px;
+        }
+        .footer-col ul li a
+        {
+          font-size: 16px;
+          text-transform: capitalize;
+          color: #ffffff;
+          text-decoration: none;
+          font-weight: 300;
+          color: #bbbbbb;
+          display: block;
+          transition: all ease 0.3s;
+        }
+        .footer-col ul li a:hover
+        {
+          color: #ffffff;
+          padding-left: 8px;
+        }
+        .footer-col .social-links a
+        {
+          display: inline-block;
+          height: 40px;
+          width: 40px;
+          background-color: rgba(255,255,255,0.2);
+          margin: 0 10px 10px 0;
+          text-align: center;
+          line-height: 40px;
+          border-radius: 50%;
+           color:#000;
+           transition: all 0.5s ease;
+        }
+        .footer-col .social-links a:hover
+        {
+          color:#ffffff ;
+          background-color: #000;
+        }
+        @media(max-width:767px) 
+        {
+        .footer-col
+        {
+          width: 50%;
+          margin-bottom: 30px;
+        }
+        }
+        @media(max-width:574px) 
+        {
+        .footer-col
+        {
+          width: 100%;
+        }
+        }
+        #sub
+        {
+          margin: 100px 0;
+        }
+        .ready 
+        {
+          padding: 100px;
+          text-align: center;
+        }
+        .ready .btn2
+        {
+          border: none;
+          outline: none;
+          height: 50px;
+          color: white;
+          background-color: black;
+          font-weight: bold;
+          border-radius: 50px;
+          width:120px;
+        }
+        .btn2 a
+        {
+          color: white;
+          text-align: center;
+        }
+        .ready .btn2:hover
+        {
+          background-color:#ff3c78;
+          color: black;
+          border: 1px solid;
+        }
+        #why
+        {
+          background-color: white;
+        }
+        #artists
+        {
+          background-color: white;
+        }
+        #sub
+        {
+        background-image: url("back1.jpg");
+        width: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+        }
+        #free
+        {
+        background-image: url("back1.jpg");
+        width: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+        padding: 100px;
+        }
+        .free2
+        {
+          
+          text-align: center;
+        }
+        #faq
+        {
+          margin: 100px 0;
+        }
+        .title2
+        {
+          padding-top: 0%;
+          text-align: center;
+        }
+       
+        
+  </style>
+  </head>
+  <body>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+    <header class="header">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+          <a class="navbar-brand text-white" href="#"><img src="favicon-32x32.png"class="img-fluid"> Listen music</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0  mb-md-0 ">
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#artists">Service</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#pricing">Pricing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#contact">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <section id="home">
+      <div class="content text-center">
+        <h1 class="link-light">Welcome to Listen music</h1>
+        <p class="link-light" > for more information to click register or sign in  here</p>
+        <button type="button" class="btn1"><span></span> <a href="signup.html">Sign-up</a></button>
+          <button type="button" class="btn1"><span></span><a href="login.html">Login</a></button>
+      </div>
+  </section>
+
+  <section id="why">
+    <div class="container container-lg-3 container-md-4 container-sm-6 container-s-6 ">
+      <h1 class="title text p-2">Why Listen Music?</h1>
+      <div class="row row-cols-1 row-cols-md-3 g-4 p-5 ">
+
+        <div class="col-lg-3 col-md-4 col-sm-6 ">
+          <div class="c">
+            <a href=""><img src="play.png" class="rounded-circle" width="140" height="140" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em"></text></a>
+            <div class="card-body">
+              <h2 >Play your favorites.</h2>
+              <p>Listen to the songs you love, and discover new music and podcasts.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="c">
+            <a href=""><img src="play1.png" class="rounded-circle" width="140" height="140" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em"></text></a>
+            <div class="card-body">
+              <h2>Playlists made easy.</h2>
+              <p>We'll help you make playlists. Or enjoy playlists made by music experts.r</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="c">
+            <a href=""><img src="play2.png" class="rounded-circle" width="140" height="140" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em"></text></a>
+            <div class="card-body">
+              <h2 >Make it yours.</h2>
+              <p>Tell us what you like, and we'll recommend music for you.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="c">
+            <a href=""><img src="play3.png" class="rounded-circle" width="140" height="140" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em"></text></a>
+            <div class="card-body">
+              <h2>Save mobile data.</h2>
+              <p>To use less data when you play music, turn on Data Saver in Settings.</p> 
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <section id="free">
+    <div class="free1">
+      <h1 class="free2 link-light " >it's free.</h1>
+      <h1 class="free2 link-light " >No Credit Card Required.</h1>
+    </div>
+  </section>
+
+ <section id="faq">
+  <div class="container col-sm-8 ">
+  <h1 class="title2">Got questions?</h1>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2">
+    <div class="accordion accordion-flush mt-5" id="accordionFlushExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header clearfix mb-3 mt-3" id="flush-headingOne">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+            How do I create a playlist?
+          </button>
+        </h2>
+        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body"><p> Playlists are a great way to save collections of music, either for your own listening or to share.</p>
+            <p>To create one:</p>
+            <p> 1. Tap Your Library.</p> 
+            <p>2. Tap CREATE.</p>
+            <p>3. Give your playlist a name.</p>
+            <p> 4. Start adding songs (and we'll help you along).</p>
+            </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header clearfix mb-3 mt-3" id=flush-headingTwo>
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+            How do I activate Data Saver mode?
+          </button>
+        </h2>
+        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body"><p>1. Tap Home.</p>
+            <p>2. Tap Settings.</p>
+            <p>3. Tap Data Saver.</p> 
+            <p>4. Switch on Data Saver.</p>
+            </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header clearfix mb-3 mt-3" id="flush-headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+            Is it only possible to shuffle play music?
+          </button>
+        </h2>
+        <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            <p>Any playlist with the shuffle icon will play on shuffle.</p>
+            <p>Some playlists won't have the shuffle icon, so you can tap any song to play it.</p>
+          </div>
+        </div>
+      </div>
+     
+    
+      <div class="accordion-item">
+        <h2 class="accordion-header clearfix mb-3 mt-3"  id ="flush-headingFour">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+            Where can I find Podcasts?
+          </button>
+        </h2>
+        <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">  Tap Search. Under Browse All, tap Podcasts.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+    </div>
+  </div>
+ </section>
+
+  <section id="sub">
+    <div class="ready">
+      <h1 class="title link-light">Ready? Let's Play</h1>
+      <button type="button" class="btn2"><a href="signup.html">GET FREE</a></button>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="footer-col">
+          <h4>COMPANY</h4>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">For the Record</a></li>
+            <li><a href="#">Jobs</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>COMMUNITIES</h4>
+          <ul>
+            <li><a href="#">For Artists</a></li>
+            <li><a href="#">Developers</a></li>
+            <li><a href="#">Advertising</a></li>
+            <li><a href="#">Investors</a></li>
+            <li><a href="#">Vendors</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>USEFUL LINKS</h4>
+          <ul>
+            <li><a href="#">Support</a></li>
+            <li><a href="#">Web player</a></li>
+            <li><a href="#">Free website</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>follow us</h4>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-snapchat"></i></a>
+            <a href="#"><i class="fab fa-telegram"></i></a>
+          </div>
+        </div>
+        </div>
+        <div class="d-flex justify-content-between py-4 my-4 border-top border-dark">
+          <p>&copy; 2022 Listen music, Inc. All rights reserved. </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  </body>
+</html>
